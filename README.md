@@ -42,8 +42,32 @@ ex) git checkout -b apply-feedback
 
 - 커스텀 문자열을 검증합니다 (validateCustomInput() - customValidator)
   - [x] : '//', '\n' 사이에 문자가 존재하는지 확인합니다 - hasDelimiter() - customValidator
-  - [] : 커스텀 구분자를 검츨합니다 - findDelimiter() - CustomInput or customValidator
-  - [] : 커스텀 구분자가 포함된 문자열인지 확인합니다 - hasCorrectInput() - customValidator
+  - [x] : 커스텀 구분자를 검츨합니다 - findDelimiter() - CustomInput or customValidator
+  - [x] : 커스텀 구분자가 포함된 문자열인지 확인합니다 - hasCorrectInput() - customValidator
     - [x] : **예외** 커스텀 구분자가 마지막에 위치한 경우, IllegalArgumentException을 throw 합니다 - isDelimiterLast() - custom.. 
     - [x] : **예외** 커스텀 구분자, 숫자 외 다른 문자가 포함된 경우, IllegalArgumentException을 throw 합니다 - hasWrongInput() - custom..
-    - [] : **예외** 커스텀 구분자 없이 숫자만 존재하는 경우, 해당 수를 결과로 출력합니다 - hasOnlyNumbers() - custom..
+    - [x] : **예외** 커스텀 구분자 없이 숫자만 존재하는 경우, 해당 수를 결과로 출력합니다 - hasOnlyNumbers() - custom..
+
+---
+### To-Do List 작성하기 - RacingCar 
+> 실패하는 테스트 만들기 - 성공할 정도로의 테스트 만들기 - 리팩토링의 과정을 반복할 것 
+
+*TOTAL 22M*
+
+각 자동차에 이름을 부여할 수 있다. 자동차 이름은 5자를 **초과**할 수 없다. // (1) - 자동차 이름 입력 받는 것부터 TDD
+- [] 이름을 쉽표로 구분하여 입력합니다 : Car, NameValidator 
+  - [x] **예외** | 쉽표로 구분하지 않고 입력한 경우 : hasNoCommas()
+  - [x] **예외** | 5자를 초과하여 입력한 경우 : LongerThanFive()
+  - [x] **예외** | 이름이 중복된 경우 : duplicatedName()
+    - [] **예외 처리 ** | 에러 발생 메세지를 출력하고, 재입력을 받습니다
+
+전진하는 자동차 출력시 이름도 같이 출력합니다 - OutputView
+- [] 전진하는 자동차를 출력합니다 - OutputView, Cars 
+
+- 전진하는 조건 0-9 Random 값에서 4 이상의 값이 등장하는 경우입니다 - RandomGenerator, RandomGenerator.generate() 
+- [] 4이상의 경우 자동차를 전진합니다 - Car, moveForward(int random)
+- [] 4보다 작은 경우 자동차를 전진하지 않습니다 
+
+- **자동차 경주 게임을 완료한 후 누가 우승했는지를 알려준다. 우승자는 한명 이상일 수 있다.** - OutputView, showWinner()
+  - [] 가장 많이 전진한 자동차 이름을 파악합니다 : Cars, car, findMaxPosition
+  - [] 우승한 자동차를 출력합니다 

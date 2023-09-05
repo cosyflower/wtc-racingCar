@@ -1,9 +1,7 @@
 package SpecialCalculator;
 
-import Utils.Constants;
-import Utils.Util;
-
-import java.util.regex.Pattern;
+import SpecialCalculator.Utils.Constants;
+import SpecialCalculator.Utils.Util;
 
 public class InputValidator {
     private final String inputValue;

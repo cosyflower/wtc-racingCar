@@ -1,3 +1,6 @@
+package SpecialCalculatorTest;
+
+import SpecialCalculator.CustomInput;
 import SpecialCalculator.ValidatedTokens;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;

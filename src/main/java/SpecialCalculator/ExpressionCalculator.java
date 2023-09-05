@@ -1,10 +1,5 @@
 package SpecialCalculator;
 
-import Utils.Constants;
-import Utils.Util;
-
-import java.util.List;
-
 public class ExpressionCalculator {
     public int calculate(ValidatedTokens validatedCustomTokens) {
         if (validatedCustomTokens.hasNothing()) {

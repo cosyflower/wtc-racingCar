@@ -1,6 +1,6 @@
-import SpecialCalculator.InputValidator;
-import SpecialCalculator.ValidatedTokens;
-import Utils.Constants;
+package SpecialCalculator;
+
+import SpecialCalculator.Utils.Constants;
 
 public class InputString {
     private final String validatedInput;

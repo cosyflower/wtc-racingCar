@@ -1,4 +1,4 @@
-package Utils;
+package SpecialCalculator.Utils;
 
 public class Util {
     public static boolean hasOnlyNumbersOrEmpty(String inputValue) {

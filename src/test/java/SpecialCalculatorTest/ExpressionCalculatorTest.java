@@ -1,4 +1,8 @@
+package SpecialCalculatorTest;
+
+import SpecialCalculator.CustomInput;
 import SpecialCalculator.ExpressionCalculator;
+import SpecialCalculator.InputString;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

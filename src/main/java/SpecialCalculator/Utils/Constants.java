@@ -1,4 +1,4 @@
-package Utils;
+package SpecialCalculator.Utils;
 
 import java.util.regex.Pattern;
 
