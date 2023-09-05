@@ -30,13 +30,20 @@ ex) git checkout -b apply-feedback
 
 가장 쉬운 테스트를 작성해보기 ( 쉼표 그리고 콜론을 Delimiter로 분리한 후 합 구하기 )
 - 입력한 문자열을 검증합니다 ( validateInput() - inputValidator)
-  - [] 숫자, 쉼표, 콜론을 포함한 문자열인지 확인합니다 hasCorrectInput() 
-  - [] **예외 처리** isEmpty() 한 문자열, 빈 문자열인 경우에은 0을 반환합니다 - isBlankInput() 
-  - [] **예외 처리** 수로만 구성된 문자열의 경우 구성된 문자열을 정수로 변환한 결과를 반환합니다 - isOnlyNumber()
-  - [] **예외 처리** 숫자, 쉼표, 콜론 이외의 문자가 포함된 경우 RunTimeException을 throw 합니다 - hasWrongInput()
-  - [] **예외 처리** null이 입력된 경우 RunTimeException을 throw 합니다 - isNull()
+  - [x] 숫자, 쉼표, 콜론을 포함한 문자열인지 확인합니다 hasCorrectInput() 
+  - [x] **출력 처리** isEmpty() 한 문자열, 빈 문자열인 경우에은 0을 반환합니다 - isBlankInput() 
+  - [x] **출력 처리** 수로만 구성된 문자열의 경우 구성된 문자열을 정수로 변환한 결과를 반환합니다 - isOnlyNumber()
+  - [x] **예외 처리** 숫자, 쉼표, 콜론 이외의 문자가 포함된 경우 RunTimeException을 throw 합니다 - hasWrongInput()
+    - [x] 숫자 중 음수가 포함된 경우 RunTimeException을 throw 합니다 
+  - [x] **예외 처리** null이 입력된 경우 RunTimeException을 throw 합니다 - isNull()
 
 - 검증된 문자열에서 쉼표 혹은 콜론을 구분자로 나눕니다
-  - [] 쉼표를 구분자로 나누는 기능 ( splitByComma() )
-  - [] 콜론은 구분자로 나누는 기능 ( splitByColon() )
-  - [] 쉼표와 콜론을 모두 구분자로 나누는 기능 ( splitByCommaAndColon() )
+  - [x] 쉼표를 구분자 혹은 콜론으로 나누는 기능 ( splitToTokens() - InputString )
+
+- 커스텀 문자열을 검증합니다 (validateCustomInput() - customValidator)
+  - [x] : '//', '\n' 사이에 문자가 존재하는지 확인합니다 - hasDelimiter() - customValidator
+  - [] : 커스텀 구분자를 검츨합니다 - findDelimiter() - CustomInput or customValidator
+  - [] : 커스텀 구분자가 포함된 문자열인지 확인합니다 - hasCorrectInput() - customValidator
+    - [x] : **예외** 커스텀 구분자가 마지막에 위치한 경우, IllegalArgumentException을 throw 합니다 - isDelimiterLast() - custom.. 
+    - [x] : **예외** 커스텀 구분자, 숫자 외 다른 문자가 포함된 경우, IllegalArgumentException을 throw 합니다 - hasWrongInput() - custom..
+    - [] : **예외** 커스텀 구분자 없이 숫자만 존재하는 경우, 해당 수를 결과로 출력합니다 - hasOnlyNumbers() - custom..
